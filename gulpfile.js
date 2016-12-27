@@ -30,6 +30,8 @@ gulp.task('copy', function () {
             .pipe(gulp.dest('dist/img')),
         gulp.src(['src/js/vendor/**'])
             .pipe(gulp.dest('dist/js/vendor')),
+        gulp.src(['src/modules/**'])
+            .pipe(gulp.dest('dist/modules')),
         gulp.src(['src/*.*'])
             .pipe(gulp.dest('dist'))
     );
@@ -86,7 +88,7 @@ gulp.task('server', function () {
     server.listen(port);
 });
 
-gulp.task('lr-server', function () {
+gulp.task('lr-server', function () {``
     // Create a LiveReload server
     lr.listen(35729, function (err) {
         if (err) {
@@ -102,9 +104,12 @@ gulp.task('watch', function () {
     // Watch .less files and run tasks if they change
     gulp.watch('src/less/**/*.less', ['styles']);
 
-    gulp.src('./src/*.html')
-        .pipe(embedlr())
-        .pipe(gulp.dest('./dist'));
+    gulp.watch('src/**/*.html',
+      gulp.src(['src/*.html','src/modules/*.html'])
+          .pipe(embedlr())
+          .pipe(gulp.dest('./dist'))
+    );
+
 });
 
 // The dist task (used to store all files that will go to the server)
