@@ -1,4 +1,4 @@
-# Web App Boilerplate
+# Web App HTML
 
 A front-end web application based on [HTML5 Boilerplate](http://html5boilerplate.com)
 and extended with [LESS](http://www.lesscss.org/) style sheets and [Gulp.js](http://gulpjs.com/)
