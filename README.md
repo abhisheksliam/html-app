@@ -1,4 +1,4 @@
-# Web App Boilerplate
+# Web App HTML
 
 A front-end web application based on [HTML5 Boilerplate](http://html5boilerplate.com)
 and extended with [LESS](http://www.lesscss.org/) style sheets and [Gulp.js](http://gulpjs.com/)
@@ -64,6 +64,6 @@ Take a look at the [documentation table of contents](doc/TOC.md).
 ## Contributing
 
 When using GitHub, each developer to have their own fork of the master repository.
-Everybody pushes to their own repository and create a pull request to master repository. 
+Everybody pushes to their own repository and create a pull request to develop branch of master repository. 
 
 Anyone and everyone is welcome to [contribute](CONTRIBUTING.md).
