@@ -37,6 +37,16 @@ gulp.task('copy', function () {
     );
 });
 
+gulp.task('copy-html', function () {
+    // Copy all application files except *.less and .js into the `dist` folder
+    return es.concat(
+        gulp.src(['src/modules/**/*.html'])
+            .pipe(gulp.dest('dist/modules')),
+        gulp.src(['src/**/*.html'])
+            .pipe(gulp.dest('dist'))
+    );
+});
+
 gulp.task('scripts', function () {
     return es.concat(
         // Detect errors and potential problems in your JavaScript code
@@ -104,11 +114,7 @@ gulp.task('watch', function () {
     // Watch .less files and run tasks if they change
     gulp.watch('src/less/**/*.less', ['styles']);
 
-    gulp.watch('src/**/*.html',
-      gulp.src(['src/*.html','src/modules/*.html'])
-          .pipe(embedlr())
-          .pipe(gulp.dest('./dist'))
-    );
+    gulp.watch('src/**/*.html', ['copy-html']);
 
 });
 
